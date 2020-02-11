@@ -61,6 +61,7 @@ public class Server extends Thread {
         OutputStream out = null;
 
         TornadoDriver driver = TornadoRuntime.getTornadoRuntime().getDriver(0);
+        final int maxDevices = driver.getDeviceCount();
 
         try {
             in = socket.getInputStream();
@@ -70,11 +71,15 @@ public class Server extends Thread {
 
             int deviceNumber = 0;
             while ((request = br.readLine()) != null) {
-
                 try {
                     deviceNumber = Integer.parseInt(request);
                 } catch (NumberFormatException e) {
                     deviceNumber = 0;
+                }
+
+                if (deviceNumber >= maxDevices) {
+                    System.out.println("[Warning] max " + maxDevices + " devices");
+                    deviceNumber = maxDevices - 1;
                 }
 
                 ts.mapAllTo(driver.getDevice(deviceNumber));
