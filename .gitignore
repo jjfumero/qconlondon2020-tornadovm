@@ -2,3 +2,8 @@
 sources.sh
 target/
 tornado.iml
+*Mandelbrot.class
+*mandelbrot.png
+*node_modules/
+*package-lock.json
+
