@@ -23,3 +23,22 @@ How to reproduce:
 ./runClient.sh
 ```
 
+
+
+#### 2) Matrix Multiplication
+
+
+```bash
+$ export CLASSPATH=target/tornado-1.0-SNAPSHOT.jar
+$ tornado qconlondon.MatrixMultiplication
+$ tornado qconlondon.MatrixMultiplication 512 seq
+$ tornado qconlondon.MatrixMultiplication 512 tornado
+$ tornado --debug qconlondon.MatrixMultiplication 512 tornado
+$ tornado --printKernel qconlondon.MatrixMultiplication 512 tornado
+$ tornado --printKernel --debug -Ds0.t0.device=0:1 qconlondon.MatrixMultiplication 512 tornado
+```
+
+
+#### 3) Node.js and TornadoVM
+
+
