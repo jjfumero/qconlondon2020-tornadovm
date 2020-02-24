@@ -2,6 +2,12 @@
 
 Artefact & demos used for QCon-London presentation 2020: [TornadoVM @ QCon-London](https://qconlondon.com/london2020/presentation/tornadovm-breaking-programmability-and-usability-gap-between-java)
 
+###### Prerequisites 
+
+* Install TornadoVM. Full guideline [here](https://github.com/beehive-lab/TornadoVM/blob/master/INSTALL.md)
+* OpenCL device with OpenCL >= 1.2 installed
+
+
 #### 1) Live Task Migration
 
 Demo using the Client-Server application to change the devices through the client:
