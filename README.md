@@ -1,8 +1,10 @@
 # TornadoVM QCon-London 2020 - Demos
 
+Artefact & demos used for QCon-London presentation 2020: [TornadoVM @ QCon-London](https://qconlondon.com/london2020/presentation/tornadovm-breaking-programmability-and-usability-gap-between-java)
 
 #### 1) Live Task Migration
 
+Demo using the Client-Server application to change the devices through the client:
 
 ```bash
 $ export JAVA_HOME=/PATH/TO/graal-jvmci-8/jdk1.8.0/product
@@ -10,20 +12,19 @@ $ export TORNADO_ROOT=/PATH/TO/TORNADOVM/ROOT
 $ export PATH="${PATH}:${TORNADO_ROOT}/bin/bin/"
 $ export TORNADO_SDK=${TORNADO_ROOT}/bin/sdk
 
-## Compile
+## Compile the application
 $ mvn clean package
 ```
 
-How to reproduce:
+How to reproduce?:
 
 ```bash
+## Run Server in one terminal
 ./runServer.sh
 
-## In another terminal
+## Client in another terminal
 ./runClient.sh
 ```
-
-
 
 #### 2) Matrix Multiplication
 
@@ -49,22 +50,34 @@ $ export TORNADO_SDK=$BASE/bin/sdk
 
 ## JDK 8 - last Graal
 $ export JAVA_HOME=/path/to/oracleGraal/19.3.0/graalvm-ce-java8-19.3.0
+
+## Install the NPM dependencies
+$ $JAVA_HOME/bin/npm install express
+$ $JAVA_HOME/bin/npm install jimp
+$ $JAVA_HOME/bin/npm install fs
 ```
 
+Compile the user-code using the alias for `javac` provided by TornadoVM:
 
-Compile the user-code
-```
+```bash
 $ javac.py Mandelbrot.java
 ```
 
-
-Running with docker?
-
+Run the application:
 ```bash
-$ docker run --runtime=nvidia --rm -it -v "$PWD":/data graalvm bash node.sh server.js
+$ bash node.sh server.js
 ```
 
-Note: `graalvm` image is local with TornadoVM and GraalVM
+##### Running with docker?
+
+```bash
+$ docker run \
+ --runtime=nvidia \
+ --rm -it -v \
+ "$PWD":/data \
+ beehivelab/tornado-gpu-graalvm-jdk11 \
+ bash node.sh server.js
+```
 
 Running stand-alone?
 
