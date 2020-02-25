@@ -84,7 +84,7 @@ public class Server extends Thread {
 
                 ts.mapAllTo(driver.getDevice(deviceNumber));
 
-                System.out.println("Selecting the device: " + request);
+                System.out.println("Selecting the device: " + deviceNumber);
                 request += '\n';
                 out.write(request.getBytes());
 

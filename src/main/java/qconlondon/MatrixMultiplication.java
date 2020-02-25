@@ -50,7 +50,7 @@ public class MatrixMultiplication {
 
         //@formatter:off
         TaskSchedule t = new TaskSchedule("s0")
-                .task("t0",MatrixMultiplication::matrixMultiplication,matrixA,matrixB,matrixC,size)
+                .task("t0", MatrixMultiplication::matrixMultiplication, matrixA, matrixB, matrixC, size)
                 .streamOut(matrixC);
         //@formatter:on
 
