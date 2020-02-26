@@ -85,12 +85,9 @@ $ docker run \
  bash node.sh server.js
 ```
 
-Running stand-alone?
+##### Running stand-alone?
 
 ```bash
-$ $JAVA_HOME/bin/npm install express
-$ $JAVA_HOME/bin/npm install jimp
-$ $JAVA_HOME/bin/npm install fs
 $ bash node.sh server.js
 ```
 
