@@ -1,8 +1,6 @@
 /*
  * Copyright (c) 2020, APT Group, Department of Computer Science,
  * School of Engineering, The University of Manchester. All rights reserved.
- * Copyright (c) 2019, APT Group, School of Computer Science,
- * The University of Manchester.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -98,11 +96,8 @@ public class Mandelbrot {
 
     public static short[] compute() {
         short[] result = new short[SIZE * SIZE];
-        
-        new TaskSchedule("s0")
-            .task("t0", Mandelbrot::mandelbrot, SIZE, result)
-            .streamOut(result)
-            .execute();
+
+        new TaskSchedule("s0").task("t0", Mandelbrot::mandelbrot, SIZE, result).streamOut(result).execute();
 
         writeFile(result, SIZE);
 
