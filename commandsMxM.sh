@@ -22,3 +22,6 @@ tornado --printKernel --debug -Ds0.t0.device=0:1 qconlondon.MatrixMultiplication
 # Run with TornadoVM on the device 3 
 # Convention: -D<taskScheduleName>.<taskName>.device=0:<deviceID> 
 tornado --printKernel --debug -Ds0.t0.device=0:3 qconlondon.MatrixMultiplication 512 tornado
+
+# Run TornadoVM with IGV (Ideal Graph Visualizer) to see the compiled graphs 
+tornado --igv qconlondon.MatrixMultiplication 512 
