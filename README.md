@@ -8,7 +8,7 @@ Artefact & demos used for QCon-London presentation 2020: [TornadoVM @ QCon-Londo
 * OpenCL device with OpenCL >= 1.2 installed
 
 
-#### 1) Live Task Migration
+## 1) Live Task Migration
 
 Demo using the Client-Server application to change the devices through the client:
 
@@ -32,7 +32,7 @@ How to reproduce?:
 ./runClient.sh
 ```
 
-#### 2) Matrix Multiplication
+## 2) Matrix Multiplication
 
 
 ```bash
@@ -66,7 +66,7 @@ tornado --igv qconlondon.MatrixMultiplication 512
 ```
 
 
-#### 3) Node.js and TornadoVM
+## 3) Node.js and TornadoVM
 
 ```bash
 $ cd nodejs
