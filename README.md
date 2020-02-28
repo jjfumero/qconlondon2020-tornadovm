@@ -89,11 +89,6 @@ Compile the user-code using the alias for `javac` provided by TornadoVM:
 $ javac.py Mandelbrot.java
 ```
 
-Run the application:
-```bash
-$ bash node.sh server.js
-```
-
 ##### Running with docker?
 
 ```bash
@@ -103,6 +98,9 @@ $ docker run \
  "$PWD":/data \
  beehivelab/tornado-gpu-graalvm-jdk11 \
  bash node.sh server.js
+
+## Access
+http://172.17.0.2:3000/ 
 ```
 
 ##### Running stand-alone?
