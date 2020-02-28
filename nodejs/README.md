@@ -1,22 +1,49 @@
 Simple example of Graal Node calling into Java which uses tornado.
 
-Note: `$JAVA_HOME` must point to GraalVM jdk8 or jdk11
+This example requires TornadoVM to be installed with GraalVM. See instructions [here](https://github.com/beehive-lab/TornadoVM/blob/master/assembly/src/docs/10_INSTALL_WITH_GRAALVM.md)
 
-Setup:
+To reproduce this artefact (nodejs program with TornadoVM), run the following commands:
 
-```bash 
-cd $TORNADO_ROOT && make
-cd $TORNADO_ROOT/examples/src/main/java/uk/ac/manchester/tornado/examples/polyglot/node
-javac.py Compute.java
+```bash
+$ cd nodejs
+$ export BASE=</path/to/tornadovm-graal>
+$ export PATH=$BASE/bin/bin:$PATH
+$ export TORNADO_SDK=$BASE/bin/sdk
+
+## JDK 8 - last Graal
+$ export JAVA_HOME=/path/to/oracleGraal/19.3.0/graalvm-ce-java8-19.3.0
+
+## Install the NPM dependencies
+$ $JAVA_HOME/bin/npm install express
+$ $JAVA_HOME/bin/npm install jimp
+$ $JAVA_HOME/bin/npm install fs
 ```
 
-Install express for the node server: `$JAVA_HOME/bin/npm install express`
+Compile the user-code using the alias for `javac` provided by TornadoVM:
 
-Run node js
-
-```bash 
-bash node.sh server.js
-wget -q -O - http://localhost:3000/
+```bash
+$ javac.py Mandelbrot.java
 ```
 
-node.sh sets the classpath/modulepath for the underlying graal jvm. It supports the same parameters as tornado.sh
+##### Running with docker?
+
+```bash
+$ docker run \
+ --runtime=nvidia \
+ --rm -it -v \
+ "$PWD":/data \
+ beehivelab/tornado-gpu-graalvm-jdk11 \
+ bash node.sh server.js
+
+## Access
+http://172.17.0.2:3000/ 
+```
+
+##### Running stand-alone?
+
+```bash
+$ bash node.sh server.js
+
+## Access
+http://127.0.0.1:3000/
+```
