@@ -57,13 +57,10 @@ public class Server extends Thread {
             a[idx] = r.nextFloat();
         });
 
-        // @formatter:off
-        ts = new TaskSchedule("s0")
-                .streamIn(a)
-                .task("t0", Server::vectorAddition, a, b)
-                .streamOut(b);
-        // @formatter:on
-
+        ts = new TaskSchedule("s0") //
+                .streamIn(a) //
+                .task("t0", Server::vectorAddition, a, b) //
+                .streamOut(b); //
         start();
     }
 
@@ -134,8 +131,9 @@ public class Server extends Thread {
             System.out.println("Unable to start server.");
         } finally {
             try {
-                if (server != null)
+                if (server != null) {
                     server.close();
+                }
             } catch (IOException ex) {
                 ex.printStackTrace();
             }

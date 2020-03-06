@@ -2,6 +2,11 @@
 
 Artefact & demos used for QCon-London presentation 2020: [TornadoVM @ QCon-London](https://qconlondon.com/london2020/presentation/tornadovm-breaking-programmability-and-usability-gap-between-java)
 
+Slides available [here](https://github.com/jjfumero/jjfumero.github.io/blob/master/files/QCON2020-TornadoVM.pdf)
+
+Video will be available soon by [InfoQ](https://www.infoq.com/)
+
+
 ###### Pre-requisites 
 
 * Install TornadoVM. Full guideline [here](https://github.com/beehive-lab/TornadoVM/blob/master/INSTALL.md)
