@@ -73,6 +73,8 @@ tornado --igv qconlondon.MatrixMultiplication 512
 
 ## 3) Node.js and TornadoVM
 
+See install guidelines for running TornadoVM with GraalVM [here](https://github.com/beehive-lab/TornadoVM/blob/master/assembly/src/docs/10_INSTALL_WITH_GRAALVM.md)
+
 ```bash
 $ cd nodejs
 $ export BASE=/path/to/tornadovm-graal
@@ -106,6 +108,9 @@ $ docker run \
 
 ## Access
 http://172.17.0.2:3000/ 
+
+## Access the sequential execution
+http://172.17.0.2:3000/java
 ```
 
 ##### Running stand-alone?
@@ -115,5 +120,8 @@ $ bash node.sh server.js
 
 ## Access
 http://127.0.0.1:3000/
+
+## Access the sequential execution
+http://127.0.0.1:3000/java
 ```
 
