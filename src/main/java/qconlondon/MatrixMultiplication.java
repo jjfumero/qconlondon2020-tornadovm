@@ -18,12 +18,12 @@
 
 package qconlondon;
 
+import uk.ac.manchester.tornado.api.TaskSchedule;
+import uk.ac.manchester.tornado.api.annotations.Parallel;
+
 import java.text.DecimalFormat;
 import java.util.Random;
 import java.util.stream.IntStream;
-
-import uk.ac.manchester.tornado.api.TaskSchedule;
-import uk.ac.manchester.tornado.api.annotations.Parallel;
 
 public class MatrixMultiplication {
 
@@ -97,7 +97,7 @@ public class MatrixMultiplication {
             t.execute();
             long end = System.nanoTime();
             long totalTime = (end - start);
-            System.out.println("Total time: " + totalTime + " (ns), " + (df.format(totalTime * 1E-9)) + "(s)");
+            System.out.println("Total time: " + totalTime + " (ns), " + (df.format(totalTime * 1E-9)) + " (s)");
         }
     }
 }
