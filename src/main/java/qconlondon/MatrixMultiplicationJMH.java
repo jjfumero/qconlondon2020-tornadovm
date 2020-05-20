@@ -67,7 +67,6 @@ public class MatrixMultiplicationJMH {
 
         @Setup(Level.Trial)
         public void doSetup() {
-            System.out.println("Do Setup");
             matrixA = new float[size * size];
             matrixB = new float[size * size];
             matrixC = new float[size * size];
@@ -100,7 +99,6 @@ public class MatrixMultiplicationJMH {
 
         @Setup(Level.Trial)
         public void doSetup() {
-            System.out.println("Setup TornadoVM");
             matrixA = new float[size * size];
             matrixB = new float[size * size];
             matrixC = new float[size * size];
