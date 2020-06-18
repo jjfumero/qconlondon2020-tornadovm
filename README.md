@@ -28,7 +28,7 @@ $ export PATH="${PATH}:${TORNADO_ROOT}/bin/bin/"
 $ export TORNADO_SDK=${TORNADO_ROOT}/bin/sdk
 
 ## Compile the application
-$ mvn clean package
+$ mvn clean install
 ```
 
 How to reproduce?:
