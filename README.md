@@ -2,9 +2,13 @@
 
 Artefact & demos used for QCon-London presentation 2020: [TornadoVM @ QCon-London](https://qconlondon.com/london2020/presentation/tornadovm-breaking-programmability-and-usability-gap-between-java)
 
-Slides available [here](https://github.com/jjfumero/jjfumero.github.io/blob/master/files/QCON2020-TornadoVM.pdf)
+* Slides available [here](https://github.com/jjfumero/jjfumero.github.io/blob/master/files/QCON2020-TornadoVM.pdf)
 
-Video will be available soon by [InfoQ](https://www.infoq.com/)
+* Video will be available soon by [InfoQ](https://www.infoq.com/)
+
+* Review from InfoQ review about the talk in QCon London: https://www.infoq.com/news/2020/03/TornadoVM-QCon-London/ 
+
+* InfoQ Article: https://www.infoq.com/articles/tornadovm-java-gpu-fpga/ 
 
 
 ###### Pre-requisites 
@@ -24,7 +28,7 @@ $ export PATH="${PATH}:${TORNADO_ROOT}/bin/bin/"
 $ export TORNADO_SDK=${TORNADO_ROOT}/bin/sdk
 
 ## Compile the application
-$ mvn clean package
+$ mvn clean install
 ```
 
 How to reproduce?:
