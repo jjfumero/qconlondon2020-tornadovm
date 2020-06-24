@@ -15,6 +15,7 @@ Artefact & demos used for QCon-London presentation 2020: [TornadoVM @ QCon-Londo
 
 * Install TornadoVM. Full guideline [here](https://github.com/beehive-lab/TornadoVM/blob/master/INSTALL.md)
 * OpenCL device with OpenCL >= 1.2 installed
+* Maven 3.6
 
 
 ## 1) Live Task Migration
