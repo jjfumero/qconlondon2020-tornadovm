@@ -45,15 +45,24 @@ public class Server extends Thread {
     private float[] a;
     private float[] b;
 
+    private static void initializeDeviceHeapAllDevices() {
+        for (int i = 0; i < TornadoRuntime.getTornadoRuntime().getNumDrivers(); i++) {
+            final TornadoDriver driver = TornadoRuntime.getTornadoRuntime().getDriver(i);
+            for (int j = 0; j < driver.getDeviceCount(); j++) {
+                driver.getDevice(j).reset();
+            }
+        }
+    }
+
     private Server(Socket socket) {
         this.socket = socket;
         System.out.println("New client connected from " + socket.getInetAddress().getHostAddress());
 
-        a = new float[100];
-        b = new float[100];
+        a = new float[256];
+        b = new float[256];
 
         Random r = new Random();
-        IntStream.range(0, 100).parallel().forEach(idx -> {
+        IntStream.range(0, a.length).parallel().forEach(idx -> {
             a[idx] = r.nextFloat();
         });
 
@@ -84,7 +93,7 @@ public class Server extends Thread {
             BufferedReader br = new BufferedReader(new InputStreamReader(in));
             String request;
 
-            int deviceNumber = 0;
+            int deviceNumber;
             while ((request = br.readLine()) != null) {
                 try {
                     deviceNumber = Integer.parseInt(request);
