@@ -106,7 +106,8 @@ public class Server extends Thread {
                     deviceNumber = maxDevices - 1;
                 }
 
-                ts.mapAllTo(driver.getDevice(deviceNumber));
+                //ts.mapAllTo(driver.getDevice(deviceNumber));
+                ts.setDevice(driver.getDevice(deviceNumber));
 
                 System.out.println("Selecting the device: " + deviceNumber);
                 request += '\n';
